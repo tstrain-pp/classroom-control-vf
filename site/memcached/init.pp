@@ -19,4 +19,4 @@ class memcached {
     subscribe => File['/etc/sysconfig/memcached'],
   }
 
-    
+ }   
