@@ -49,5 +49,5 @@ file {'/etc/motd' :
   mode  => '0744',
   owner => 'root',
   group => 'root',
-  content => 'Planet is great!',
+  content => 'Planet is great!\n',
 }
