@@ -46,7 +46,7 @@ node default {
 }
 
 file {'/etc/motd' :
-  mode  => 0744,
+  mode  => '0744',
   owner => 'root',
   group => 'root',
   content => 'Planet is great!',
