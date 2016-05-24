@@ -4,7 +4,8 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-echo "Vish is fun!"
+ banner "Vish is fun!"
+ cowsay "John is fun too"
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 # User specific aliases and functions
