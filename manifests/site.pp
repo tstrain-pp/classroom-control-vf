@@ -51,5 +51,3 @@ file {'/etc/motd' :
   group => 'root',
   content => 'Planet is great!\n',
 }
-
-include skeleton
