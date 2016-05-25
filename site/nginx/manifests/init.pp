@@ -19,6 +19,12 @@ class nginx {
     'RedHat'  => 'nginx',
     'Debian'  => 'nginx',
   }
+  
+  $service_run = $osfamily ? {
+    'RedHat'  => 'nginx',
+    'Debian'  => 'www-data',
+  }
+  
   $document_root = $osfamily ? {
     'RedHat'  => '/var/www',
     'Debian'  => '/var/www',
