@@ -15,9 +15,14 @@ class nginx {
     'Debian'  => 'root',
   }
   
-    $document_root = $osfamily ? {
+  $document_root = $osfamily ? {
     'RedHat'  => '/var/www',
     'Debian'  => '/var/www',
+  }
+  
+  $config_directory = $osfamily ? {
+    'RedHat'  => '/etc/nginx/conf.d',
+    'Debian'  => '/etc/nginx/conf.d',
   }
   
   File{
