@@ -15,6 +15,10 @@ class nginx {
     'Debian'  => 'root',
   }
   
+  $service_name = $osfamily ? {
+    'RedHat'  => 'nginx',
+    'Debian'  => 'nginx',
+  }
   $document_root = $osfamily ? {
     'RedHat'  => '/var/www',
     'Debian'  => '/var/www',
@@ -70,7 +74,7 @@ class nginx {
     mode => '0775',
   }
 
-  service {'nginx':
+  service {$service_name:
     ensure => 'running',
     enable => 'true',
     subscribe => File['/etc/nginx/nginx.conf'],
