@@ -1,11 +1,26 @@
 class nginx {
 
-  File{
-    owner   => 'root',
-    group   => 'root',
+  $package = $osfamily ? {
+    'RedHat'  => 'nginx',
+    'Debian'  => 'nginx',
+  }
+
+  $owner = $osfamily ? {
+    'RedHat'  => 'root',
+    'Debian'  => 'root',
+  }
+
+  $group = $osfamily ? {
+    'RedHat'  => 'root',
+    'Debian'  => 'root',
   }
   
-  package {'nginx':
+  File{
+    owner   => $owner,
+    group   => $group,
+  }
+  
+  package {$package:
     ensure => 'present',
   }
   
