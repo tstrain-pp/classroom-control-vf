@@ -64,7 +64,6 @@ class nginx {
     ensure => file,
     mode => '0664',
     source => template('nginx/default.conf.erb',
-    require => Package[$package],
     notify => Service['nginx'],
   }
   
