@@ -2,7 +2,7 @@
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
 
-user              nginx;
+user              <%= @service_run %>;
 worker_processes  1;
 
 error_log  <%= @log_dir %>.log;
