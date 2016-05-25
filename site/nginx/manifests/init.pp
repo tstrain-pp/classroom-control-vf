@@ -70,7 +70,7 @@ class nginx {
   file { '/etc/nginx/nginx.conf':
     ensure  => 'file',
     mode    => '0644',
-    source  => 'puppet:///modules/nginx/nginx.conf',
+    source  => template('nginx/nginx.conf.erb'),
     require => Package['nginx'],
   }
 
