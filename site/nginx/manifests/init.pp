@@ -63,7 +63,7 @@ class nginx {
   file { '/etc/nginx/conf.d/default.conf':
     ensure => file,
     mode => '0664',
-    source => template(nginx/default.conf.erb',
+    source => template('nginx/default.conf.erb',
     require => Package['nginx'],
     notify => Service['nginx'],
   }
