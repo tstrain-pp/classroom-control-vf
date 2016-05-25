@@ -25,6 +25,11 @@ class nginx {
     'Debian'  => '/etc/nginx/conf.d',
   }
   
+  $log_dir = $osfamily ? {
+    'RedHat' => '/var/log/nginx/',
+    'Debian' => '/var/log/nginx/',
+  }
+  
   File{
     owner   => $owner,
     group   => $group,
