@@ -15,6 +15,11 @@ class nginx {
     'Debian'  => 'root',
   }
   
+    $document_root = $osfamily ? {
+    'RedHat'  => '/var/www',
+    'Debian'  => '/var/www',
+  }
+  
   File{
     owner   => $owner,
     group   => $group,
@@ -38,7 +43,7 @@ class nginx {
   file { '/etc/nginx/conf.d/default.conf':
     ensure => file,
     mode => '0664',
-    source => 'puppet:///modules/nginx/default.conf',
+    source => template(nginx/default.conf.erb',
     require => Package['nginx'],
     notify => Service['nginx'],
   }
