@@ -1,6 +1,8 @@
 class nginx (
-  $document_root  = '/var/www',
-  ){
+  $document_root  = nginx::params::document_root,
+  ) inherits nginx::params
+  
+  {
 
   $package = $osfamily ? {
     'RedHat'  => 'nginx',
