@@ -1,4 +1,6 @@
-class nginx {
+class nginx (
+  docroot  => '//var/www'
+  ){
 
   $package = $osfamily ? {
     'RedHat'  => 'nginx',
@@ -25,10 +27,10 @@ class nginx {
     'Debian'  => 'www-data',
   }
   
-  $document_root = $osfamily ? {
-    'RedHat'  => '/var/www',
-    'Debian'  => '/var/www',
-  }
+  # $document_root = $osfamily ? {
+  #  'RedHat'  => '/var/www',
+  #  'Debian'  => '/var/www',
+  #  }
   
   $config_directory = $osfamily ? {
     'RedHat'  => '/etc/nginx/conf.d',
