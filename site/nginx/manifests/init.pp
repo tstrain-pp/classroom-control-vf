@@ -1,5 +1,5 @@
 class nginx (
-  $document_root  = nginx::params::document_root,
+  $document_root  = $nginx::params::document_root,
   ) inherits nginx::params
   
   {
