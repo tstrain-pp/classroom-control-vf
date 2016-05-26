@@ -1,5 +1,5 @@
 class nginx::params {
 
-  $document_root           = '/var/www',
+  $document_root        = '/var/www'
   
 }
