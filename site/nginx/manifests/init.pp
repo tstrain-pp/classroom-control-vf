@@ -1,5 +1,5 @@
 class nginx (
-  docroot  => '/var/www',
+  $document_root  = '/var/www',
   ){
 
   $package = $osfamily ? {
